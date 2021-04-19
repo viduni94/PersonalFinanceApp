@@ -66,7 +66,7 @@ namespace PersonalFinanceApp
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.login);
             // 
             // lblUsername
             // 
@@ -87,7 +87,6 @@ namespace PersonalFinanceApp
             this.lblPassword.Size = new System.Drawing.Size(153, 45);
             this.lblPassword.TabIndex = 5;
             this.lblPassword.Text = "Password";
-            this.lblPassword.Click += new System.EventHandler(this.label2_Click);
             // 
             // loginImage
             // 
@@ -99,7 +98,6 @@ namespace PersonalFinanceApp
             this.loginImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.loginImage.TabIndex = 6;
             this.loginImage.TabStop = false;
-            this.loginImage.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblExitLink
             // 

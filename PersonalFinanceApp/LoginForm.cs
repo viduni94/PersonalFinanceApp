@@ -23,22 +23,17 @@ namespace PersonalFinanceApp
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void login(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\VIDUNI\DOCUMENTS\PERSONALFINANCEDB.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From [User] where username='" + inputUsername.Text + "' and password = '" + inputPassword.Text + "'", connection);
@@ -49,6 +44,7 @@ namespace PersonalFinanceApp
             {
                 this.Hide();
                 Dashboard myDashboard = new Dashboard();
+                myDashboard.Activate();
                 myDashboard.Show();
             }
             else
