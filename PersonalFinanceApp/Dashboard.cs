@@ -15,28 +15,34 @@ namespace PersonalFinanceApp
             InitializeComponent();
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void exit(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Create a single instance of the transaction form
+        TransactionForm newTransactionFormWindow = null;
         private void addNewTransaction(object sender, EventArgs e)
         {
-            TransactionForm newTransactionFormWindow = new TransactionForm();
-            newTransactionFormWindow.Activate();
-            newTransactionFormWindow.ShowDialog();
+            if (this.newTransactionFormWindow == null)
+            {
+                this.newTransactionFormWindow = new TransactionForm();
+            }
+            newTransactionFormWindow.AutoScroll = true;
+            this.newTransactionFormWindow.Activate();
+            this.newTransactionFormWindow.Show();
         }
 
+        // Create a single instance of the contact form
+        ContactForm newContactFormWindow = null;
         private void addNewContact(object sender, EventArgs e)
         {
-            ContactForm newContactFormWindow = new ContactForm();
-            newContactFormWindow.Activate();
-            newContactFormWindow.ShowDialog();
+            if (this.newContactFormWindow == null)
+            {
+                this.newContactFormWindow = new ContactForm();
+            }
+            this.newContactFormWindow.Activate();
+            this.newContactFormWindow.Show();
         }
     }
 }

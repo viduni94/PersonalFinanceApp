@@ -59,5 +59,41 @@ namespace PersonalFinanceApp.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save Transaction(s).
+        /// </summary>
+        internal static string BTN_SAVE_TRANSACTION {
+            get {
+                return ResourceManager.GetString("BTN_SAVE_TRANSACTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction {0} :.
+        /// </summary>
+        internal static string LABEL_TRANSACTION {
+            get {
+                return ResourceManager.GetString("LABEL_TRANSACTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        internal static string PLACEHOLDER_AMOUNT {
+            get {
+                return ResourceManager.GetString("PLACEHOLDER_AMOUNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string PLACEHOLDER_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("PLACEHOLDER_DESCRIPTION", resourceCulture);
+            }
+        }
     }
 }

@@ -67,7 +67,6 @@ namespace PersonalFinanceApp
             this.splitContainer1.Panel1.Controls.Add(this.btnAddContact);
             this.splitContainer1.Panel1.Controls.Add(this.btnAddEvent);
             this.splitContainer1.Panel1.Controls.Add(this.btnAdddTx);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 

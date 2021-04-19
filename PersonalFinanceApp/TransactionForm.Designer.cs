@@ -31,11 +31,12 @@ namespace PersonalFinanceApp
         {
             this.lblNewTx = new System.Windows.Forms.Label();
             this.lblGoToDashboard = new System.Windows.Forms.LinkLabel();
-            this.datePickerForTx = new System.Windows.Forms.DateTimePicker();
+            this.date = new System.Windows.Forms.DateTimePicker();
             this.lblEnterDate = new System.Windows.Forms.Label();
             this.lblNoOfTx = new System.Windows.Forms.Label();
-            this.inputNoOfTx = new System.Windows.Forms.TextBox();
             this.btnEnterNoOfTx = new System.Windows.Forms.Button();
+            this.noOfTransactions = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.noOfTransactions)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNewTx
@@ -52,7 +53,7 @@ namespace PersonalFinanceApp
             // 
             this.lblGoToDashboard.AutoSize = true;
             this.lblGoToDashboard.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblGoToDashboard.Location = new System.Drawing.Point(29, 1236);
+            this.lblGoToDashboard.Location = new System.Drawing.Point(12, 18);
             this.lblGoToDashboard.Name = "lblGoToDashboard";
             this.lblGoToDashboard.Size = new System.Drawing.Size(271, 32);
             this.lblGoToDashboard.TabIndex = 1;
@@ -60,16 +61,16 @@ namespace PersonalFinanceApp
             this.lblGoToDashboard.Text = "Go Back To Dashboard";
             this.lblGoToDashboard.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.navigateToDashboard);
             // 
-            // datePickerForTx
+            // date
             // 
-            this.datePickerForTx.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.datePickerForTx.CustomFormat = "yyyy-MM-dd";
-            this.datePickerForTx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.datePickerForTx.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePickerForTx.Location = new System.Drawing.Point(939, 202);
-            this.datePickerForTx.Name = "datePickerForTx";
-            this.datePickerForTx.Size = new System.Drawing.Size(270, 50);
-            this.datePickerForTx.TabIndex = 2;
+            this.date.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.date.CustomFormat = "yyyy-MM-dd";
+            this.date.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.date.Location = new System.Drawing.Point(939, 202);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(270, 50);
+            this.date.TabIndex = 2;
             // 
             // lblEnterDate
             // 
@@ -91,41 +92,45 @@ namespace PersonalFinanceApp
             this.lblNoOfTx.TabIndex = 4;
             this.lblNoOfTx.Text = "How many transactions do you want to add?";
             // 
-            // inputNoOfTx
-            // 
-            this.inputNoOfTx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.inputNoOfTx.Location = new System.Drawing.Point(939, 274);
-            this.inputNoOfTx.Name = "inputNoOfTx";
-            this.inputNoOfTx.Size = new System.Drawing.Size(270, 50);
-            this.inputNoOfTx.TabIndex = 5;
-            // 
             // btnEnterNoOfTx
             // 
             this.btnEnterNoOfTx.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnEnterNoOfTx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnterNoOfTx.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEnterNoOfTx.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEnterNoOfTx.Location = new System.Drawing.Point(1247, 273);
             this.btnEnterNoOfTx.Name = "btnEnterNoOfTx";
             this.btnEnterNoOfTx.Size = new System.Drawing.Size(160, 51);
             this.btnEnterNoOfTx.TabIndex = 6;
             this.btnEnterNoOfTx.Text = "Submit";
             this.btnEnterNoOfTx.UseVisualStyleBackColor = false;
-            this.btnEnterNoOfTx.Click += new System.EventHandler(this.submitNoOfTransactions);
+            this.btnEnterNoOfTx.Click += new System.EventHandler(this.onClickGenerateTransactionFormFields);
             // 
-            // Transaction
+            // noOfTransactions
+            // 
+            this.noOfTransactions.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.noOfTransactions.Location = new System.Drawing.Point(939, 274);
+            this.noOfTransactions.Name = "noOfTransactions";
+            this.noOfTransactions.Size = new System.Drawing.Size(270, 50);
+            this.noOfTransactions.TabIndex = 7;
+            // 
+            // TransactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1769, 1299);
+            this.AutoScroll = true;
+            this.AutoScrollMinSize = new System.Drawing.Size(0, 1370);
+            this.ClientSize = new System.Drawing.Size(1905, 1305);
+            this.Controls.Add(this.noOfTransactions);
             this.Controls.Add(this.btnEnterNoOfTx);
-            this.Controls.Add(this.inputNoOfTx);
             this.Controls.Add(this.lblNoOfTx);
             this.Controls.Add(this.lblEnterDate);
-            this.Controls.Add(this.datePickerForTx);
+            this.Controls.Add(this.date);
             this.Controls.Add(this.lblGoToDashboard);
             this.Controls.Add(this.lblNewTx);
-            this.Name = "Transaction";
+            this.Name = "TransactionForm";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 25, 0);
             this.Text = "Transaction";
+            ((System.ComponentModel.ISupportInitialize)(this.noOfTransactions)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,10 +140,10 @@ namespace PersonalFinanceApp
 
         private System.Windows.Forms.Label lblNewTx;
         private System.Windows.Forms.LinkLabel lblGoToDashboard;
-        private System.Windows.Forms.DateTimePicker datePickerForTx;
+        private System.Windows.Forms.DateTimePicker date;
         private System.Windows.Forms.Label lblEnterDate;
         private System.Windows.Forms.Label lblNoOfTx;
-        private System.Windows.Forms.TextBox inputNoOfTx;
         private System.Windows.Forms.Button btnEnterNoOfTx;
+        private System.Windows.Forms.NumericUpDown noOfTransactions;
     }
 }
