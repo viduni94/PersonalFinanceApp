@@ -198,7 +198,7 @@ namespace PersonalFinanceApp
         /// <param name="firstName">Initial value of the firstName property.</param>
         /// <param name="lastName">Initial value of the lastName property.</param>
         /// <param name="contactNo">Initial value of the contactNo property.</param>
-        public static Contact CreateContact(global::System.Int32 id, global::System.String firstName, global::System.String lastName, global::System.String contactNo)
+        public static Contact CreateContact(global::System.Int32 id, global::System.String firstName, global::System.String lastName, global::System.Int32 contactNo)
         {
             Contact contact = new Contact();
             contact.Id = id;
@@ -292,7 +292,7 @@ namespace PersonalFinanceApp
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String contactNo
+        public global::System.Int32 contactNo
         {
             get
             {
@@ -302,13 +302,13 @@ namespace PersonalFinanceApp
             {
                 OncontactNoChanging(value);
                 ReportPropertyChanging("contactNo");
-                _contactNo = StructuralObject.SetValidValue(value, false, "contactNo");
+                _contactNo = StructuralObject.SetValidValue(value, "contactNo");
                 ReportPropertyChanged("contactNo");
                 OncontactNoChanged();
             }
         }
-        private global::System.String _contactNo;
-        partial void OncontactNoChanging(global::System.String value);
+        private global::System.Int32 _contactNo;
+        partial void OncontactNoChanging(global::System.Int32 value);
         partial void OncontactNoChanged();
 
         #endregion

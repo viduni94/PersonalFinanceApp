@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/20/2021 02:51:19
+-- Date Created: 04/20/2021 03:40:02
 -- Generated from EDMX file: C:\Users\Viduni\source\repos\PersonalFinanceApp\PersonalFinanceApp\MyFinanceDb.edmx
 -- --------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE [dbo].[Contacts] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [firstName] nvarchar(max)  NOT NULL,
     [lastName] nvarchar(max)  NOT NULL,
-    [contactNo] nvarchar(max)  NOT NULL
+    [contactNo] int  NOT NULL
 );
 GO
 

@@ -17,7 +17,7 @@ namespace PersonalFinanceApp
 
         private void exit(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         // Create a single instance of the transaction form

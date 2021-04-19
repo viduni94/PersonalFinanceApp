@@ -5,13 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace PersonalFinanceApp
 {
     public partial class ContactForm : Form
     {
-        // Property for contact details
-        public ContactDetails contactData { get; set; }
         public ContactForm()
         {
             InitializeComponent();
@@ -34,16 +33,11 @@ namespace PersonalFinanceApp
 
         private void saveContact(object sender, EventArgs e)
         {
-            this.contactData.FirstName = this.firstName.Text;
-            this.contactData.LastName = this.lastName.Text;
-            this.contactData.ContactNo = int.Parse(this.contactNo.Text);
-            //this.CreateContact(this.firstName.Text, this.lastName.Text, this.contactNo.Text);
-        }
+            ContactModel contactModel = new ContactModel();
+            contactModel.SaveContact(this.firstName.Text, this.lastName.Text, int.Parse(this.contactNo.Text));
 
-        private void CreateContact(String firstName, String lastName, int contactNo)
-        {
-            //UserModel userModel = new UserModel();
-            //userModel.CreateContact(firstName, lastName, contactNo)
+            this.Hide();
+            MessageBox.Show("Contact saved");
         }
     }
 }

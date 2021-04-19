@@ -132,7 +132,6 @@ namespace PersonalFinanceApp
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginForm";
             this.Text = "Login Form";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.loginImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -38,7 +38,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="firstName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="lastName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="contactNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="contactNo" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Transactions">
     <Key>
@@ -140,7 +140,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="firstName" Type="String" Nullable="false" />
           <Property Name="lastName" Type="String" Nullable="false" />
-          <Property Name="contactNo" Type="String" Nullable="false" />
+          <Property Name="contactNo" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Transactions" Relationship="myFinanceDbFileModel.TransactionContact" FromRole="Contact" ToRole="Transaction" />
         </EntityType>
         <EntityType Name="Transaction">
