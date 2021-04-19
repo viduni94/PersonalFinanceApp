@@ -46,8 +46,8 @@ namespace PersonalFinanceApp
             // lblDashboardTitle
             // 
             this.lblDashboardTitle.AutoSize = true;
-            this.lblDashboardTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDashboardTitle.Location = new System.Drawing.Point(340, 22);
+            this.lblDashboardTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDashboardTitle.Location = new System.Drawing.Point(314, 17);
             this.lblDashboardTitle.Name = "lblDashboardTitle";
             this.lblDashboardTitle.Size = new System.Drawing.Size(467, 65);
             this.lblDashboardTitle.TabIndex = 0;
@@ -55,7 +55,8 @@ namespace PersonalFinanceApp
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(33, 34);
+            this.splitContainer1.Location = new System.Drawing.Point(30, 27);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -72,19 +73,20 @@ namespace PersonalFinanceApp
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Info;
             this.splitContainer1.Panel2.Controls.Add(this.lblDashboardTitle);
-            this.splitContainer1.Size = new System.Drawing.Size(1700, 1220);
-            this.splitContainer1.SplitterDistance = 566;
+            this.splitContainer1.Size = new System.Drawing.Size(1569, 953);
+            this.splitContainer1.SplitterDistance = 522;
             this.splitContainer1.TabIndex = 1;
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.SystemColors.GrayText;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnExit.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnExit.Location = new System.Drawing.Point(100, 1082);
+            this.btnExit.Location = new System.Drawing.Point(92, 845);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(352, 72);
+            this.btnExit.Size = new System.Drawing.Size(325, 56);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit Application";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -94,11 +96,12 @@ namespace PersonalFinanceApp
             // 
             this.btnMonthlySum.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnMonthlySum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMonthlySum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMonthlySum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnMonthlySum.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnMonthlySum.Location = new System.Drawing.Point(100, 920);
+            this.btnMonthlySum.Location = new System.Drawing.Point(92, 719);
+            this.btnMonthlySum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMonthlySum.Name = "btnMonthlySum";
-            this.btnMonthlySum.Size = new System.Drawing.Size(352, 128);
+            this.btnMonthlySum.Size = new System.Drawing.Size(325, 100);
             this.btnMonthlySum.TabIndex = 4;
             this.btnMonthlySum.Text = "View Monthly Summary";
             this.btnMonthlySum.UseVisualStyleBackColor = false;
@@ -107,11 +110,12 @@ namespace PersonalFinanceApp
             // 
             this.btnWeeklySum.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnWeeklySum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWeeklySum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnWeeklySum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnWeeklySum.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnWeeklySum.Location = new System.Drawing.Point(100, 758);
+            this.btnWeeklySum.Location = new System.Drawing.Point(92, 592);
+            this.btnWeeklySum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnWeeklySum.Name = "btnWeeklySum";
-            this.btnWeeklySum.Size = new System.Drawing.Size(352, 128);
+            this.btnWeeklySum.Size = new System.Drawing.Size(325, 100);
             this.btnWeeklySum.TabIndex = 3;
             this.btnWeeklySum.Text = "View Weekly Summary";
             this.btnWeeklySum.UseVisualStyleBackColor = false;
@@ -120,11 +124,12 @@ namespace PersonalFinanceApp
             // 
             this.btnAddContact.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnAddContact.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddContact.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddContact.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnAddContact.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAddContact.Location = new System.Drawing.Point(100, 346);
+            this.btnAddContact.Location = new System.Drawing.Point(92, 270);
+            this.btnAddContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddContact.Name = "btnAddContact";
-            this.btnAddContact.Size = new System.Drawing.Size(352, 72);
+            this.btnAddContact.Size = new System.Drawing.Size(325, 56);
             this.btnAddContact.TabIndex = 2;
             this.btnAddContact.Text = "Add Contact";
             this.btnAddContact.UseVisualStyleBackColor = false;
@@ -134,11 +139,12 @@ namespace PersonalFinanceApp
             // 
             this.btnAddEvent.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnAddEvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddEvent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddEvent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnAddEvent.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAddEvent.Location = new System.Drawing.Point(100, 194);
+            this.btnAddEvent.Location = new System.Drawing.Point(92, 152);
+            this.btnAddEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddEvent.Name = "btnAddEvent";
-            this.btnAddEvent.Size = new System.Drawing.Size(352, 72);
+            this.btnAddEvent.Size = new System.Drawing.Size(325, 56);
             this.btnAddEvent.TabIndex = 1;
             this.btnAddEvent.Text = "Add Event";
             this.btnAddEvent.UseVisualStyleBackColor = false;
@@ -147,11 +153,12 @@ namespace PersonalFinanceApp
             // 
             this.btnAdddTx.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnAdddTx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdddTx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdddTx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnAdddTx.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAdddTx.Location = new System.Drawing.Point(100, 48);
+            this.btnAdddTx.Location = new System.Drawing.Point(92, 38);
+            this.btnAdddTx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdddTx.Name = "btnAdddTx";
-            this.btnAdddTx.Size = new System.Drawing.Size(352, 72);
+            this.btnAdddTx.Size = new System.Drawing.Size(325, 56);
             this.btnAdddTx.TabIndex = 0;
             this.btnAdddTx.Text = "Add Transaction";
             this.btnAdddTx.UseVisualStyleBackColor = false;
@@ -159,10 +166,11 @@ namespace PersonalFinanceApp
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1769, 1299);
+            this.ClientSize = new System.Drawing.Size(1633, 1015);
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.splitContainer1.Panel1.ResumeLayout(false);

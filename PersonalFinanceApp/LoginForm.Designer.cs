@@ -42,27 +42,32 @@ namespace PersonalFinanceApp
             // 
             // inputUsername
             // 
-            this.inputUsername.Location = new System.Drawing.Point(470, 422);
+            this.inputUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputUsername.Location = new System.Drawing.Point(434, 339);
+            this.inputUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inputUsername.Name = "inputUsername";
-            this.inputUsername.Size = new System.Drawing.Size(456, 39);
+            this.inputUsername.Size = new System.Drawing.Size(421, 50);
             this.inputUsername.TabIndex = 0;
             // 
             // inputPassword
             // 
-            this.inputPassword.Location = new System.Drawing.Point(470, 543);
+            this.inputPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputPassword.Location = new System.Drawing.Point(434, 454);
+            this.inputPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inputPassword.Name = "inputPassword";
-            this.inputPassword.Size = new System.Drawing.Size(456, 39);
+            this.inputPassword.Size = new System.Drawing.Size(421, 50);
             this.inputPassword.TabIndex = 1;
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLogin.Location = new System.Drawing.Point(587, 655);
+            this.btnLogin.Location = new System.Drawing.Point(544, 540);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(206, 76);
+            this.btnLogin.Size = new System.Drawing.Size(190, 59);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -71,8 +76,8 @@ namespace PersonalFinanceApp
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblUsername.Location = new System.Drawing.Point(470, 374);
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblUsername.Location = new System.Drawing.Point(426, 292);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(163, 45);
             this.lblUsername.TabIndex = 4;
@@ -81,8 +86,8 @@ namespace PersonalFinanceApp
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPassword.Location = new System.Drawing.Point(470, 495);
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblPassword.Location = new System.Drawing.Point(426, 407);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(153, 45);
             this.lblPassword.TabIndex = 5;
@@ -92,7 +97,8 @@ namespace PersonalFinanceApp
             // 
             this.loginImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.loginImage.Image = ((System.Drawing.Image)(resources.GetObject("loginImage.Image")));
-            this.loginImage.Location = new System.Drawing.Point(606, 124);
+            this.loginImage.Location = new System.Drawing.Point(557, 79);
+            this.loginImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loginImage.Name = "loginImage";
             this.loginImage.Size = new System.Drawing.Size(187, 187);
             this.loginImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -102,9 +108,9 @@ namespace PersonalFinanceApp
             // lblExitLink
             // 
             this.lblExitLink.AutoSize = true;
-            this.lblExitLink.Location = new System.Drawing.Point(22, 903);
+            this.lblExitLink.Location = new System.Drawing.Point(20, 705);
             this.lblExitLink.Name = "lblExitLink";
-            this.lblExitLink.Size = new System.Drawing.Size(178, 32);
+            this.lblExitLink.Size = new System.Drawing.Size(160, 25);
             this.lblExitLink.TabIndex = 7;
             this.lblExitLink.TabStop = true;
             this.lblExitLink.Text = "Exit Application";
@@ -112,10 +118,10 @@ namespace PersonalFinanceApp
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1372, 954);
+            this.ClientSize = new System.Drawing.Size(1266, 745);
             this.Controls.Add(this.lblExitLink);
             this.Controls.Add(this.loginImage);
             this.Controls.Add(this.lblPassword);
@@ -123,6 +129,7 @@ namespace PersonalFinanceApp
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.inputPassword);
             this.Controls.Add(this.inputUsername);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginForm";
             this.Text = "Login Form";
             this.Load += new System.EventHandler(this.LoginForm_Load);

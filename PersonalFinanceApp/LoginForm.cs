@@ -35,12 +35,10 @@ namespace PersonalFinanceApp
 
         private void login(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\VIDUNI\DOCUMENTS\PERSONALFINANCEDB.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From [User] where username='" + inputUsername.Text + "' and password = '" + inputPassword.Text + "'", connection);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
+            myFinanceDbFileEntities db = new myFinanceDbFileEntities();
+            var count = db.Users.Where(element => element.username == inputUsername.Text && element.password == inputPassword.Text).Count();
 
-            if (dt.Rows[0][0].ToString() == "1")
+            if (count.ToString() == "1")
             {
                 this.Hide();
                 Dashboard myDashboard = new Dashboard();

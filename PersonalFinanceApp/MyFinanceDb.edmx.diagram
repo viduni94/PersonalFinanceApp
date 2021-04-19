@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9c60c3f0d7ba44b593f6ec93ea5b16ba" Name="Diagram1" >
+        <EntityTypeShape EntityType="myFinanceDbFileModel.User" Width="1.5" PointX="6.75" PointY="2.125" />
+        <EntityTypeShape EntityType="myFinanceDbFileModel.Contact" Width="1.5" PointX="3.375" PointY="2.125" />
+        <EntityTypeShape EntityType="myFinanceDbFileModel.Transaction" Width="1.5" PointX="3.375" PointY="5.125" />
+        <EntityTypeShape EntityType="myFinanceDbFileModel.Event" Width="1.5" PointX="7" PointY="5.375" />
+        <AssociationConnector Association="myFinanceDbFileModel.TransactionContact" />
+        <AssociationConnector Association="myFinanceDbFileModel.UserEvent" />
+        <AssociationConnector Association="myFinanceDbFileModel.UserTransaction" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

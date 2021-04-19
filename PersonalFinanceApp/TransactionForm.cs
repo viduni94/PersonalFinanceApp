@@ -53,7 +53,6 @@ namespace PersonalFinanceApp
                 System.Drawing.Point p1 = new System.Drawing.Point(472, 450 + i * 175);
                 textBoxTransactionAmounts[i].Location = p1;
                 textBoxTransactionAmounts[i].Size = new System.Drawing.Size(200, 50);
-                textBoxTransactionAmounts[i].PlaceholderText = Properties.Resources.PLACEHOLDER_AMOUNT;
                 this.Controls.Add(textBoxTransactionAmounts[i]);
 
                 // Instantiate and configure the description text boxes
@@ -61,7 +60,6 @@ namespace PersonalFinanceApp
                 System.Drawing.Point p2 = new System.Drawing.Point(698, 450 + i * 175);
                 textBoxDescription[i].Location = p2;
                 textBoxDescription[i].Size = new System.Drawing.Size(454, 120);
-                textBoxDescription[i].PlaceholderText = Properties.Resources.PLACEHOLDER_DESCRIPTION;
                 textBoxDescription[i].Multiline = true;
                 this.Controls.Add(textBoxDescription[i]);
 
