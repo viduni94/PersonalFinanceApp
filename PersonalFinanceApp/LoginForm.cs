@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PersonalFinanceApp
 {
@@ -39,9 +40,21 @@ namespace PersonalFinanceApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Dashboard myDashboard = new Dashboard();
-            myDashboard.Show();
+            SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\VIDUNI\DOCUMENTS\PERSONALFINANCEDB.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From [User] where username='" + inputUsername.Text + "' and password = '" + inputPassword.Text + "'", connection);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                this.Hide();
+                Dashboard myDashboard = new Dashboard();
+                myDashboard.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password");
+            }
         }
     }
 }
