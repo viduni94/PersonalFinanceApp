@@ -148,6 +148,7 @@ namespace PersonalFinanceApp
             this.btnAddEvent.TabIndex = 1;
             this.btnAddEvent.Text = "Add Event";
             this.btnAddEvent.UseVisualStyleBackColor = false;
+            this.btnAddEvent.Click += new System.EventHandler(this.addNewEvent);
             // 
             // btnAdddTx
             // 

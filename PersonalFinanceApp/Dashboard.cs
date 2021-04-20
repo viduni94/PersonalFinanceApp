@@ -44,5 +44,16 @@ namespace PersonalFinanceApp
             this.newContactFormWindow.Activate();
             this.newContactFormWindow.Show();
         }
+
+        EventForm newEventForm = null;
+        private void addNewEvent(object sender, EventArgs e)
+        {
+            if (this.newEventForm == null)
+            {
+                this.newEventForm = new EventForm();
+            }
+            this.newEventForm.Activate();
+            this.newEventForm.Show();
+        }
     }
 }

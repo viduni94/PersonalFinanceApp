@@ -55,6 +55,7 @@ namespace PersonalFinanceApp
             this.inputPassword.Location = new System.Drawing.Point(434, 454);
             this.inputPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inputPassword.Name = "inputPassword";
+            this.inputPassword.PasswordChar = '*';
             this.inputPassword.Size = new System.Drawing.Size(421, 50);
             this.inputPassword.TabIndex = 1;
             // 
