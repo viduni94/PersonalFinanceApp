@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Linq;
+using System.IO;
+using System.Xml;
 
 namespace PersonalFinanceApp
 {
@@ -112,6 +114,28 @@ namespace PersonalFinanceApp
                 transactionList.Add(newTransaction);
             }
 
+            // Store in XML file
+            string workingDirectory = Directory.GetCurrentDirectory();
+            XmlTextWriter textWriter = new XmlTextWriter(workingDirectory + "\\myDataFile.xml", null);
+            textWriter.WriteStartDocument();
+            textWriter.WriteStartElement("Details");
+
+            for (int i = 0; i < noOfFieldsRequired; i++)
+            {
+                textWriter.WriteComment("myXmlFile.xml in root dir");
+                textWriter.WriteStartElement("Transaction");
+                textWriter.WriteString(textBoxTransactionAmounts[i].Text);
+                textWriter.WriteString(textBoxDescription[i].Text);
+                textWriter.WriteString(radioButtonsOcc[i].OneOff ? "One-off" : "Recurring");
+                textWriter.WriteString(radioButtonsType[i].Income ? "Income" : "Expense");
+                textWriter.WriteEndElement();
+            }
+            textWriter.WriteEndElement();
+            textWriter.WriteEndDocument();
+            textWriter.Close();
+            Console.ReadLine();
+
+            // Saving to database
             TransactionModel transactionModel = new TransactionModel();
             transactionModel.SaveTransaction(transactionList);
 

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace PersonalFinanceApp
 {
@@ -54,6 +56,33 @@ namespace PersonalFinanceApp
             }
             this.newEventForm.Activate();
             this.newEventForm.Show();
+        }
+
+        private void onDashboardLoad(object sender, EventArgs e)
+        {
+            string workingDirectory = Directory.GetCurrentDirectory();
+            XmlTextReader textReader = new XmlTextReader(workingDirectory + @"\myDataFile.xml");
+            if (textReader.HasLineInfo())
+            {
+                textReader.Read();
+
+                List<string> list = new List<string>();
+
+                while (textReader.Read())
+                {
+                    textReader.MoveToElement();
+                    if (textReader.Name == "Transaction")
+                    {
+                        // The desired node has been found
+                        XmlNodeType nType = textReader.NodeType;
+                        if (nType == XmlNodeType.Text)
+                        {
+                            list.Add(textReader.Value.ToString());
+                        }
+                    }
+                }
+                textReader.Close();
+            } 
         }
     }
 }
