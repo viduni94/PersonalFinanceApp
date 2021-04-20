@@ -120,13 +120,25 @@
   <data name="BTN_SAVE_TRANSACTION" xml:space="preserve">
     <value>Save Transaction(s)</value>
   </data>
+  <data name="EXPENSE_VALUE" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="INCOME_VALUE" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="LABEL_TRANSACTION" xml:space="preserve">
     <value>Transaction {0} :</value>
+  </data>
+  <data name="ONEOFF_VALUE" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="PLACEHOLDER_AMOUNT" xml:space="preserve">
     <value>Amount</value>
   </data>
   <data name="PLACEHOLDER_DESCRIPTION" xml:space="preserve">
     <value>Description</value>
+  </data>
+  <data name="RECURRING_VALUE" xml:space="preserve">
+    <value>2</value>
   </data>
 </root>

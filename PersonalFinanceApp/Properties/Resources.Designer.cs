@@ -70,11 +70,38 @@ namespace PersonalFinanceApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string EXPENSE_VALUE {
+            get {
+                return ResourceManager.GetString("EXPENSE_VALUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string INCOME_VALUE {
+            get {
+                return ResourceManager.GetString("INCOME_VALUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transaction {0} :.
         /// </summary>
         internal static string LABEL_TRANSACTION {
             get {
                 return ResourceManager.GetString("LABEL_TRANSACTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string ONEOFF_VALUE {
+            get {
+                return ResourceManager.GetString("ONEOFF_VALUE", resourceCulture);
             }
         }
         
@@ -93,6 +120,15 @@ namespace PersonalFinanceApp.Properties {
         internal static string PLACEHOLDER_DESCRIPTION {
             get {
                 return ResourceManager.GetString("PLACEHOLDER_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string RECURRING_VALUE {
+            get {
+                return ResourceManager.GetString("RECURRING_VALUE", resourceCulture);
             }
         }
     }

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/20/2021 03:40:02
+-- Date Created: 04/20/2021 09:01:15
 -- Generated from EDMX file: C:\Users\Viduni\source\repos\PersonalFinanceApp\PersonalFinanceApp\MyFinanceDb.edmx
 -- --------------------------------------------------
 
@@ -17,14 +17,14 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_TransactionContact]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_TransactionContact];
-GO
 IF OBJECT_ID(N'[dbo].[FK_UserEvent]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Events] DROP CONSTRAINT [FK_UserEvent];
 GO
 IF OBJECT_ID(N'[dbo].[FK_UserTransaction]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_UserTransaction];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TransactionContact]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_TransactionContact];
 GO
 
 -- --------------------------------------------------
@@ -73,8 +73,8 @@ CREATE TABLE [dbo].[Transactions] (
     [description] nvarchar(max)  NULL,
     [type] int  NOT NULL,
     [occurrence] int  NOT NULL,
-    [ContactId] int  NOT NULL,
-    [UserId] int  NOT NULL
+    [UserId] int  NOT NULL,
+    [contactName] nvarchar(max)  NULL
 );
 GO
 
@@ -121,21 +121,6 @@ GO
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
-
--- Creating foreign key on [ContactId] in table 'Transactions'
-ALTER TABLE [dbo].[Transactions]
-ADD CONSTRAINT [FK_TransactionContact]
-    FOREIGN KEY ([ContactId])
-    REFERENCES [dbo].[Contacts]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_TransactionContact'
-CREATE INDEX [IX_FK_TransactionContact]
-ON [dbo].[Transactions]
-    ([ContactId]);
-GO
 
 -- Creating foreign key on [UserId] in table 'Events'
 ALTER TABLE [dbo].[Events]

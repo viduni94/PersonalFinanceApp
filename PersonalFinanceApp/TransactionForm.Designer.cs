@@ -122,7 +122,7 @@ namespace PersonalFinanceApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(0, 1370);
-            this.ClientSize = new System.Drawing.Size(1792, 1020);
+            this.ClientSize = new System.Drawing.Size(1826, 1020);
             this.Controls.Add(this.noOfTransactions);
             this.Controls.Add(this.btnEnterNoOfTx);
             this.Controls.Add(this.lblNoOfTx);

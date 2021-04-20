@@ -19,7 +19,6 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("myFinanceDbFileModel", "TransactionContact", "Transaction", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PersonalFinanceApp.Transaction), "Contact", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.One, typeof(PersonalFinanceApp.Contact), true)]
 [assembly: EdmRelationshipAttribute("myFinanceDbFileModel", "UserEvent", "User", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.One, typeof(PersonalFinanceApp.User), "Event", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PersonalFinanceApp.Event), true)]
 [assembly: EdmRelationshipAttribute("myFinanceDbFileModel", "UserTransaction", "User", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.One, typeof(PersonalFinanceApp.User), "Transaction", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(PersonalFinanceApp.Transaction), true)]
 
@@ -313,32 +312,6 @@ namespace PersonalFinanceApp
 
         #endregion
 
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("myFinanceDbFileModel", "TransactionContact", "Transaction")]
-        public EntityCollection<Transaction> Transactions
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Transaction>("myFinanceDbFileModel.TransactionContact", "Transaction");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Transaction>("myFinanceDbFileModel.TransactionContact", "Transaction", value);
-                }
-            }
-        }
-
-        #endregion
-
     }
     
     /// <summary>
@@ -611,9 +584,8 @@ namespace PersonalFinanceApp
         /// <param name="amount">Initial value of the amount property.</param>
         /// <param name="type">Initial value of the type property.</param>
         /// <param name="occurrence">Initial value of the occurrence property.</param>
-        /// <param name="contactId">Initial value of the ContactId property.</param>
         /// <param name="userId">Initial value of the UserId property.</param>
-        public static Transaction CreateTransaction(global::System.Int32 id, global::System.DateTime date, global::System.Decimal amount, global::System.Int32 type, global::System.Int32 occurrence, global::System.Int32 contactId, global::System.Int32 userId)
+        public static Transaction CreateTransaction(global::System.Int32 id, global::System.DateTime date, global::System.Decimal amount, global::System.Int32 type, global::System.Int32 occurrence, global::System.Int32 userId)
         {
             Transaction transaction = new Transaction();
             transaction.Id = id;
@@ -621,7 +593,6 @@ namespace PersonalFinanceApp
             transaction.amount = amount;
             transaction.type = type;
             transaction.occurrence = occurrence;
-            transaction.ContactId = contactId;
             transaction.UserId = userId;
             return transaction;
         }
@@ -782,30 +753,6 @@ namespace PersonalFinanceApp
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ContactId
-        {
-            get
-            {
-                return _ContactId;
-            }
-            set
-            {
-                OnContactIdChanging(value);
-                ReportPropertyChanging("ContactId");
-                _ContactId = StructuralObject.SetValidValue(value, "ContactId");
-                ReportPropertyChanged("ContactId");
-                OnContactIdChanged();
-            }
-        }
-        private global::System.Int32 _ContactId;
-        partial void OnContactIdChanging(global::System.Int32 value);
-        partial void OnContactIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.Int32 UserId
         {
             get
@@ -824,48 +771,34 @@ namespace PersonalFinanceApp
         private global::System.Int32 _UserId;
         partial void OnUserIdChanging(global::System.Int32 value);
         partial void OnUserIdChanged();
-
-        #endregion
-
-        #region Navigation Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("myFinanceDbFileModel", "TransactionContact", "Contact")]
-        public Contact Contact
+        public global::System.String contactName
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("myFinanceDbFileModel.TransactionContact", "Contact").Value;
+                return _contactName;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("myFinanceDbFileModel.TransactionContact", "Contact").Value = value;
+                OncontactNameChanging(value);
+                ReportPropertyChanging("contactName");
+                _contactName = StructuralObject.SetValidValue(value, true, "contactName");
+                ReportPropertyChanged("contactName");
+                OncontactNameChanged();
             }
         }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Contact> ContactReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Contact>("myFinanceDbFileModel.TransactionContact", "Contact");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Contact>("myFinanceDbFileModel.TransactionContact", "Contact", value);
-                }
-            }
-        }
+        private global::System.String _contactName;
+        partial void OncontactNameChanging(global::System.String value);
+        partial void OncontactNameChanged();
+
+        #endregion
+
+        #region Navigation Properties
     
         /// <summary>
         /// No Metadata Documentation available.
