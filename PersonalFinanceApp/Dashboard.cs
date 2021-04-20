@@ -60,6 +60,7 @@ namespace PersonalFinanceApp
 
         private void onDashboardLoad(object sender, EventArgs e)
         {
+            // Read from XML
             string workingDirectory = Directory.GetCurrentDirectory();
             XmlTextReader textReader = new XmlTextReader(workingDirectory + @"\myDataFile.xml");
             if (textReader.HasLineInfo())
@@ -82,7 +83,10 @@ namespace PersonalFinanceApp
                     }
                 }
                 textReader.Close();
-            } 
+            }
+
+            // Read from Database and populate data
+
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Linq;
 using System.IO;
 using System.Xml;
+using System.Threading;
 
 namespace PersonalFinanceApp
 {
@@ -114,26 +115,10 @@ namespace PersonalFinanceApp
                 transactionList.Add(newTransaction);
             }
 
-            // Store in XML file
-            string workingDirectory = Directory.GetCurrentDirectory();
-            XmlTextWriter textWriter = new XmlTextWriter(workingDirectory + "\\myDataFile.xml", null);
-            textWriter.WriteStartDocument();
-            textWriter.WriteStartElement("Details");
-
-            for (int i = 0; i < noOfFieldsRequired; i++)
-            {
-                textWriter.WriteComment("myXmlFile.xml in root dir");
-                textWriter.WriteStartElement("Transaction");
-                textWriter.WriteString(textBoxTransactionAmounts[i].Text);
-                textWriter.WriteString(textBoxDescription[i].Text);
-                textWriter.WriteString(radioButtonsOcc[i].OneOff ? "One-off" : "Recurring");
-                textWriter.WriteString(radioButtonsType[i].Income ? "Income" : "Expense");
-                textWriter.WriteEndElement();
-            }
-            textWriter.WriteEndElement();
-            textWriter.WriteEndDocument();
-            textWriter.Close();
-            Console.ReadLine();
+            // Save to XML file using new thread
+            var saveToXmlThread = new Thread(saveToXmlFile);
+            saveToXmlThread.IsBackground = true;
+            saveToXmlThread.Start();
 
             // Saving to database
             TransactionModel transactionModel = new TransactionModel();
@@ -158,6 +143,39 @@ namespace PersonalFinanceApp
         private void textBox_keyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void saveToXmlFile()
+        {
+            // Store in XML file
+            string workingDirectory = Directory.GetCurrentDirectory();
+            XmlTextWriter textWriter = new XmlTextWriter(workingDirectory + "\\myDataFile.xml", null);
+            textWriter.WriteStartDocument();
+            textWriter.WriteStartElement("Details");
+
+            for (int i = 0; i < noOfFieldsRequired; i++)
+            {
+                textWriter.WriteComment("myXmlFile.xml in root dir");
+                textWriter.WriteStartElement("Transaction");
+                textWriter.WriteStartElement("Amount");
+                textWriter.WriteString(textBoxTransactionAmounts[i].Text);
+                textWriter.WriteEndElement();
+                textWriter.WriteStartElement("Description");
+                textWriter.WriteString(textBoxDescription[i].Text);
+                textWriter.WriteEndElement();
+                textWriter.WriteStartElement("Occurrence");
+                textWriter.WriteString(radioButtonsOcc[i].OneOff ? "One-off" : "Recurring");
+                textWriter.WriteEndElement();
+                textWriter.WriteStartElement("Type");
+                textWriter.WriteString(radioButtonsType[i].Income ? "Income" : "Expense");
+                textWriter.WriteEndElement();
+                textWriter.WriteEndElement();
+            }
+            textWriter.WriteEndElement();
+            textWriter.WriteEndDocument();
+            textWriter.Close();
+            Console.ReadLine();
+            Thread.Sleep(1000);
         }
     }
 }

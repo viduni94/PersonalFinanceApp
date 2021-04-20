@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace PersonalFinanceApp
 {
@@ -10,20 +10,29 @@ namespace PersonalFinanceApp
     {
         public void SaveContact(String firstName, String lastName, int contactNo)
         {
-            myFinanceDbFileEntities db = new myFinanceDbFileEntities();
             Contact contact = new Contact();
             contact.firstName = firstName;
             contact.lastName = lastName;
             contact.contactNo = contactNo;
 
+            // Save to Database via a new thread;
+            var newThread = new Thread(() => insertIntoDatabase(contact));
+            newThread.IsBackground = true;
+            newThread.Start();
+        }
+
+        private static void insertIntoDatabase(Contact contact)
+        {
+            myFinanceDbFileEntities db = new myFinanceDbFileEntities();
             db.Contacts.AddObject(contact);
             try
             {
-                db.SaveChanges();
+               db.SaveChanges();
+               Thread.Sleep(500);
             }
-            catch (Exception)
+               catch (Exception)
             {
-                throw new Exception();
+               throw new Exception();
             }
         }
     }
